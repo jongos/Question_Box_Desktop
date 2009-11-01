@@ -1,59 +1,64 @@
 =======================
-OpenQuestion
+OPEN QUESTION 0.2.0
 =======================
 
-A project based on QuestionBox; it handles querries of callers on various
+A project based on QuestionBox; it handles queries of callers on various
 topics; for more information http://www.questionbox.org/
 
-=======================
-Bug reports: or known errors
-=======================
-list of bugs(known issues)
+==============================
+BUG REPORTS
+==============================
+
 * when adding already existing exiting category,informs the user that 
 new category added yet actually nothing happens..
 
 * adding answer from administrator console won't show success alert, but
  new answer is added to the database.
 
-* when editting a ticket in the operator console,the edit figure closes 
+* when editing a ticket in the operator console,the edit figure closes 
 the operator console once  it's launched.
-*when adding two answers in a row,the second one updates the first one 
+
+* when adding two answers in a row,the second one updates the first one 
 added instead of adding a new one.
 
-======================
-Development
 =====================
+DEVELOPMENT
+=====================
+
 You can pullout the source and commit changes; 
 or you can build on top of the existing source code and use Java's clean
-Object oriented features to overload or override existing classes; we have
+object oriented features to overload or override existing classes; we have
 document the class source code (you can use the jars while retaining the 
-document hierarchy.
+document hierarchy).
 
 
 ========================
- Setup
+SETUP AND INSTALLATION
 ========================
-A. Create your own install package as desired.
 
- 1 just build with netbeans or eclipse IDE
-and then run the jar file.  You may need a proper location for the DatabaseConfig.txt
+A. Creating An Install Package
 
-2. Create a database called "questionbox". or anything you want.
-3. Run the database script against the above database.
-4. Run the jar from this location with the command >java -jar QuestionBox.jar
+ 	1. Build with netbeans or eclipse IDE. Run the jar file.  You may need a proper location for the DatabaseConfig.txt
+	2. Create a database with any name.
+	3. Run the database script against the above database.
+	4. Run the jar from this location with the command 'java -jar QuestionBox.jar'
 
 Note: make sure the lib folder is in the save directory as the jar file you are running.
 
-B. using jars
-This is also a sufficient step;
-you can use just the lib folder, the QuestionBox.jar, and the DatabaseConfig.txt 
-file to create a project structure as shown below;
-1. Create a folder
-	%mkdir QuestionBox
-2. Under the QuestionBox folder copy the following items in that folder
-	-QuestionBox.jar
-	-lib folder
-	-DatabaseConfig.txt
+B. Using Jars
+
+This is also a sufficient step; you can use just the lib folder, 
+the QuestionBox.jar, and the DatabaseConfig.txt file to create a project structure as shown below;
+
+	1. Create a folder
+		%mkdir QuestionBox
+	
+	2. Under the QuestionBox folder copy the following items in that folder
+	
+		- QuestionBox.jar
+		- lib folder
+		- DatabaseConfig.txt
+	
 NOTE: Do not forget to run the DatabaseScript.sql against your own MySQL installation; 
 For phpMyAdmin users, it is easy; create database (call it questionbox), and import 
 the SQL script, click go.
@@ -61,27 +66,36 @@ the SQL script, click go.
 Please refer to your MySQL manual if you want to use the shell/commandline which is 
 also easy.
 
-Use MySQL 5.0+
+	Use MySQL 5.0+
 
-Not tested on MySQL 6.0
+	Not tested on MySQL 6.0
 
-Use Java 1.5+ (tested on Java 5 and 6)
+	Use Java 1.5+ (tested on Java 5 and 6)
 
-Finally:
-The project structure
-++QuestionBox
---++QuestionBox.jar
---++Lib/
---++DatabaseConfig.txt
+Finally, the project structure:
 
-=================
-RELEASE
-=================
+	++QuestionBox
+	--++QuestionBox.jar
+	--++Lib/
+	--++DatabaseConfig.txt
 
-This is a free and open source project: that means it is copy left and is under the
-Creative commons license and MIT license
+======================
+DISTRIBUTION LICENSE
+======================
 
-@Appfrica Labs
-Victor Miclovich
-Release Manager, QuestionBox 2.0
-********************************
+Open Question is a free and open source project and released under the GNU LESSER GENERAL PUBLIC LICENSE (http://www.gnu.org/licenses/lgpl-3.0.txt)
+
+=============================
+CORE DEVELOPMENT TEAM
+=============================
+
+twitter - @appfrica or @questionbox
+
+Jon Gosier (j.gosier@appfrica.org)
+Ivan Kavuma (ivan.kavuma@appfrica.org)
+Moses Mugisha (moses@appfrica.org)
+Emma Oluka (emma.oluka@appfrica.org)
+Jerry Opolot (jerry@appfrica.org)
+Victor Miclovich (victor.miclovich@appfrica.org)
+
+Please visit http://open.questionbox.org for additional details or http://github.com/openquestion to request access
