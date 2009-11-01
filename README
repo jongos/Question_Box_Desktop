@@ -9,17 +9,7 @@ topics; for more information http://www.questionbox.org/
 BUG REPORTS
 ==============================
 
-* when adding already existing exiting category,informs the user that 
-new category added yet actually nothing happens..
-
-* adding answer from administrator console won't show success alert, but
- new answer is added to the database.
-
-* when editing a ticket in the operator console,the edit figure closes 
-the operator console once  it's launched.
-
-* when adding two answers in a row,the second one updates the first one 
-added instead of adding a new one.
+Currently tracking all open issues at http://github.com/openquestion/Question_Box_Desktop/issues
 
 =====================
 DEVELOPMENT
@@ -30,7 +20,6 @@ or you can build on top of the existing source code and use Java's clean
 object oriented features to overload or override existing classes; we have
 document the class source code (you can use the jars while retaining the 
 document hierarchy).
-
 
 ========================
 SETUP AND INSTALLATION
