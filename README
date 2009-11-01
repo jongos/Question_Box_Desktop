@@ -15,11 +15,14 @@ Currently tracking all open issues at http://github.com/openquestion/Question_Bo
 DEVELOPMENT
 =====================
 
-You can pullout the source and commit changes; 
-or you can build on top of the existing source code and use Java's clean
-object oriented features to overload or override existing classes; we have
-document the class source code (you can use the jars while retaining the 
-document hierarchy).
+You can pullout the source and commit changes or you can build on top of the existing source code 
+and use Java's clean object oriented features to overload or override existing classes; we have
+documented the class source code (you can use the jars while retaining the document hierarchy).
+
+For a list of ideas, feature requests and things we hope to include in future releases please visit 
+the wish-list at http://wiki.github.com/openquestion/Question_Box_Desktop/development-wish-list
+
+The wish-list has a developers discussion forum and messageboard that can be found at http://discussions.zoho.com/openquestion
 
 ========================
 SETUP AND INSTALLATION
@@ -87,4 +90,4 @@ Emma Oluka (emma.oluka@appfrica.org)
 Jerry Opolot (jerry@appfrica.org)
 Victor Miclovich (victor.miclovich@appfrica.org)
 
-Please visit http://open.questionbox.org for additional details or http://github.com/openquestion to request access
+Please visit http://open.questionbox.org for additional details or http://github.com/openquestion to request access. Feature wish-list and discussion at http://discussions.zoho.com/openquestion.
