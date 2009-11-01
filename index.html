@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>openquestion/Question_Box_Desktop @ GitHub</title>
+	
+	<style type="text/css">
+		body {
+  		margin-top: 1.0em;
+  		background-color: #ffffff;
+		  font-family: "Helvetica,Arial,FreeSans"; 
+  		color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+		h1 { font-size: 3.8em; color: #000000; margin-bottom: 3px; }
+		h1 .small { font-size: 0.4em; }
+		h1 a { text-decoration: none }
+		h2 { font-size: 1.5em; color: #000000; }
+    h3 { text-align: center; color: #000000; }
+    a { color: #000000; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+		pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+	</style>
+	
+</head>
+
+<body>
+  <a href="http://github.com/openquestion/Question_Box_Desktop"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/openquestion/Question_Box_Desktop/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/openquestion/Question_Box_Desktop/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+      
+    <h1><a href="http://github.com/openquestion/Question_Box_Desktop">Question_Box_Desktop</a> 
+      <span class="small">by <a href="http://github.com/openquestion">openquestion</a></span></h1>
+
+    <div class="description">
+      Open Question is a FOSS project.  The product is designed for quick and easy information collection and dissemination by phone operators or surveyors operating in developing countries.
+    </div>
+
+    <p>Open Question is Open Mind’s contribution to the Free and Open Source Software (FOSS) community. In order to move our efforts with the Question Box software forward, we are open sourcing our source code to allow the community the opportunity to contribute to the Question Box project.
+
+This project, dubbed Open Question, allows developers to access the Question Box source code, improve the code or write supplementary software. The core development team at Appfrica Labs in Uganda has spent hours refactoring the code, optimizing for scale and the various ways the software might be re-purposed.
+
+Examples of contributions from developers might include: integrate a software PBX routing system, creating an IVR system, SMS applications, analytics or anything else one might want to contribute. We also hope developers will work with us to creak ways to push and hook data from other platforms like FrontlineSMS, Google Earth, RapidSMS, Ushahidi and others…
+
+In addition to offering a platform for developers to contribute to, Open Question allows the concept and technology behind Question Box to scale beyond the modest constraints of Open Mind as a company. This means any organization on the planet can now set up their own instance of Question Box without approaching us first, although Open Mind as a company is available for consultation services related to setup, deployment and oversight of operations where necessary. Our intent is for any organization with a need, but especially global development organizations, to use this in ways that allows them to disseminate information more efficiently.
+
+Developers will have access to the three core elements of Open Question: the database, the front-end GUI and the middle tier architecture (search, relevancy algorithms and archiving).
+
+Because the question and answer data we use in our deployments does not belong to us, it cannot be included in an Open Question instance with additional consultation. However, the strength of Question Box lies in the indexing of data relevant to you, your organization or the people you are attempting to serve.</p><h2>Install</h2>
+<p>A. Create your own install package as desired.
+
+1. build with netbeans or eclipse IDE
+and then run the jar file.  You may need a proper location for the DatabaseConfig.txt
+2. Create a database called "questionbox". or anything you want.
+3. Run the database script against the above database.
+4. Run the jar from this location with the command >java -jar QuestionBox.jar
+
+Note: make sure the lib folder is in the save directory as the jar file you are running.
+
+B. using jars
+This is also a sufficient step;
+you can use just the lib folder, the QuestionBox.jar, and the DatabaseConfig.txt 
+file to create a project structure as shown below;
+
+1. Create a folder
+  %mkdir QuestionBox
+2. Under the QuestionBox folder copy the following items in that folder
+  -QuestionBox.jar
+  -lib folder
+  -DatabaseConfig.txt
+
+NOTE: Do not forget to run the DatabaseScript.sql against your own MySQL installation; 
+For phpMyAdmin users, it is easy; create database (call it questionbox), and import 
+the SQL script, click go.
+
+Please refer to your MySQL manual if you want to use the shell/commandline which is 
+also easy.
+
+Use MySQL 5.0+
+
+Not tested on MySQL 6.0
+
+Use Java 1.5+ (tested on Java 5 and 6)
+
+Finally:
+The project structure
+++QuestionBox
+--++QuestionBox.jar
+--++Lib/
+--++DatabaseConfig.txt
+</p>
+<h2>License</h2>
+<p>http://www.gnu.org/licenses/lgpl-3.0.txt</p>
+<h2>Authors</h2>
+<p>Appfrica Labs<br/>      </p>
+<h2>Contact</h2>
+<p>Open Question Project (j.gosier@questionbox.org)<br/>      </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/openquestion/Question_Box_Desktop/zipball/master">zip</a> or
+      <a href="http://github.com/openquestion/Question_Box_Desktop/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/openquestion/Question_Box_Desktop</pre>
+    </p>
+      
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/openquestion/Question_Box_Desktop">openquestion/Question_Box_Desktop</a>
+    </div>
+    
+  </div>
+
+  
+</body>
+</html>
