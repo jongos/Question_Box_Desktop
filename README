@@ -38,7 +38,7 @@ SETUP AND INSTALLATION
 
 A. Creating An Install Package
 
- 	1. Build with netbeans or eclipse IDE. Run the jar file.  You may need a proper location for the DatabaseConfig.txt
+	1. Build with netbeans or eclipse IDE. Run the jar file.  You may need a proper location for the DatabaseConfig.txt
 	2. Create a database with any name.
 	3. Run the database script against the above database.
 	4. Run the jar from this location with the command 'java -jar QuestionBox.jar'
