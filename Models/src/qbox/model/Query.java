@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author Ivan Kavuma
+ * @author ivank
  */
 public class Query {
     private long queryid;
@@ -73,20 +73,20 @@ public class Query {
     }
 
 
+
+
+
 /**
- *  This function searches queries in Natural language fulltext search for question that where answered previously.
+ *  This is function search queries in Natural language fulltext search that where answered previously.
  * @param Searchquery
- * @param limit number of results to return
+ * @param limit
  * @param CategoryID
- * @return ArrayList<Result>
+ * @return
  * @throws Exception
  */
     public static ArrayList<Result> Search(String Searchquery,int limit,long CategoryID) throws Exception
     {
         ArrayList<Result> results = new ArrayList<Result>();
-
-        //This query looks in the qbquery table for the query in a given category and limits the number of
-        //results.  It also uses a score of relevance from the text search.
         String query = " SELECT QueryID, CategoryID, Details, Querysource, "+
                     " MATCH ( Details ) AGAINST ( ? ) AS Score FROM qbquery " +
                     " WHERE CategoryID = ? AND MATCH ( Details ) AGAINST ( ? ) ORDER BY score DESC LIMIT ?  ";
@@ -99,12 +99,10 @@ public class Query {
         while (rs.next())
         {
             Result res = new Result();
+            
+            System.out.println("Query id :" + rs.getLong("QueryID")); //delete
 
-            //Try to find a ticket from database corresponding to the query found.
             Ticket tick = Ticket.getTicketByQuery(rs.getLong("QueryID"));
-
-            //If ticket is found and the its status is completed, then return the ticket and the score/relevance
-            //of the ticket.
             if(tick != null && tick.getStatusid() == Status.getStatusbyDesc("Completed").getStatusID())
             {   res.Key = tick;
                 res.Value = rs.getFloat("Score");

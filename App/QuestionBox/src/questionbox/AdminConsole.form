@@ -149,7 +149,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-              <JLayeredPaneConstraints x="20" y="20" width="110" height="30" layer="0" position="-1"/>
+              <JLayeredPaneConstraints x="20" y="20" width="160" height="30" layer="0" position="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -163,7 +163,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-              <JLayeredPaneConstraints x="20" y="60" width="110" height="30" layer="0" position="-1"/>
+              <JLayeredPaneConstraints x="20" y="60" width="160" height="30" layer="0" position="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -177,7 +177,21 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
-              <JLayeredPaneConstraints x="20" y="100" width="110" height="30" layer="0" position="-1"/>
+              <JLayeredPaneConstraints x="20" y="100" width="160" height="30" layer="0" position="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+              <action class="questionbox.AdminConsole" id="openRecsites" methodName="openRecsites"/>
+            </Property>
+            <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
+            <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
+              <JLayeredPaneConstraints x="20" y="140" width="160" height="30" layer="0" position="-1"/>
             </Constraint>
           </Constraints>
         </Component>

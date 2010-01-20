@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author Ivan Kavuma
+ * @author Administrator
  */
 public class Category {
     
@@ -47,13 +47,6 @@ public class Category {
         this.Title = val;
     }
 
-    /**
-     * This function returns a categoryid given a tittle of the category.
-     * It is used in dropdown / combo-Boxes.  to obtain the id of a category
-     * selected by the user.
-     * @param title
-     * @return long CategoryID
-     */
     public static long getCategoryIDByTitle(String title)
     {
         try{
@@ -74,12 +67,6 @@ public class Category {
          return 0;
     }
 
-/**
- * This function checks that the category exists by looking at the tittle.
- * It is used during inserting of a new category to avoid duplication.
- * @return
- * @throws Exception
- */
     public boolean Exists() throws Exception
     {
          String query = " SELECT Title " +
@@ -97,11 +84,6 @@ public class Category {
            return false;
     }
 
-    /**
-     * This function is used to add a new category to the database.
-     * @return true if successfully added otherwise false.
-     * @throws Exception
-     */
     public boolean AddCategory() throws Exception
     {
         if(!Exists()){
@@ -118,10 +100,6 @@ public class Category {
             return false;
     }
 
-    /**
-     * This function is used to update any changes to a category to the database.
-     * @return true if successfully added otherwise false.* @throws Exception
-     */
     public boolean UpdateCategory() throws Exception
     {
        String query = " UPDATE qbcategory SET Descr = ?,Title = ? " +
@@ -133,12 +111,7 @@ public class Category {
        return DataAccess.ExecuteNonQuery(query,parameter );
     }
 
-/**
- * This function returns a category object from the database given a category ID.
- * @param CategoryID
- * @return Category Object
- * @throws Exception
- */
+
     public static Category getCategory(long CategoryID) throws Exception
     {
          String query = " SELECT CategoryID,Descr,Title " +
@@ -160,12 +133,6 @@ public class Category {
            return category;
     }
 
-    /**
-     * This function returns a list of all categories in the database.
-     * It is used to populate dropdown lists.
-     * @return ArrayList<Category> 
-     * @throws Exception
-     */
      public static ArrayList<Category> getAllCategorys() throws Exception
      {
             String query = " SELECT CategoryID,Descr,Title " +

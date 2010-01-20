@@ -40,6 +40,7 @@ public class AnswerFrm extends javax.swing.JFrame {
         //These were being lost when set via the properties tab.
         answer = ans;
         initComponents();
+         this.setTitle("Add Answers Form");
         lblSource.setText("Source");
         lblDetails.setText("Details");
         lblLinktoanswer.setText("Link to Answer");
@@ -108,7 +109,7 @@ public class AnswerFrm extends javax.swing.JFrame {
         txtDetails = new javax.swing.JTextArea();
         btnSave = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("Form"); // NOI18N
 
         lblSource.setName("lblSource"); // NOI18N

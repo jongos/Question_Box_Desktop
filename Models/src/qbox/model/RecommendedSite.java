@@ -1,11 +1,11 @@
 /**
  *
- * Appfrica Labs Uganda Ltd Copyright @since 2009
+ * Appfrica Labs Uganda Ltd Copyrigth @since 2009
  * @version 2
  *
  * This class Manages RecommendedSites which are used for the search of the caller queries.
  *
- * @author Ivan Kavuma
+ * @author ivank
  */
 package qbox.model;
 
@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author Ivan Kavuma
+ * @author Administrator
  */
 public class RecommendedSite {
 
@@ -53,7 +53,7 @@ public class RecommendedSite {
 
 
     /**
-     * This function adds recommended site to the database for use in the online search later.
+     * This function addes recommended site to the database for use in the search later.
      * @return true if added successfully otherwise false.
      * @throws Exception
      */
@@ -91,7 +91,6 @@ public class RecommendedSite {
 
     /**
      * Get the whole list of recommented sites from the database.
-     * To be used in the dropdowns and combo-boxes.
      * @return ArrayList<RecommendedSite>
      * @throws Exception
      */
@@ -114,6 +113,34 @@ public class RecommendedSite {
          }
         return recSites;
     }
+       /**
+        * Gets a recommended site given a site id.
+        * @param siteid
+        * @return
+        * @throws java.lang.Exception
+        */
+        public static RecommendedSite getSite(long siteid) throws Exception
+       {
+                 RecommendedSite site = new RecommendedSite();
+                 try{
+
+                    String query = " SELECT RecommendedsiteID,Url,Name FROM qbrecommendedsite WHERE RecommendedsiteID = ? " ;
+                    Object[] parameter = {siteid};
+                    ResultSet rs = DataAccess.ExecuteQuery(query,parameter);
+
+                    while (rs.next())
+                    {
+                       site.setRecommendedsiteid(rs.getLong("RecommendedsiteID"));
+                       site.setName(rs.getString("Name"));
+                       site.setUrl(rs.getString("Url"));
+                     }
+
+                 }catch(Exception e)
+                 {
+                     throw new Exception(e.getMessage());
+                 }
+                  return site;
+             }
 
 
 }

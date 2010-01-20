@@ -1,11 +1,8 @@
-/**
- *
- * Appfrica Labs Uganda Ltd Copyrigth @since 2009
- * @version 2
- *
- * This class manages the Categories of queries that callers are asking about.
- *
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
+
 package qbox.model;
 
 import java.sql.*;
@@ -16,26 +13,26 @@ import java.util.*;
 
 /**
  *
- * @author Ivan Kavuma
- * 
+ * @author ivank
  */
 public class DataAccess {
 
-    //These parameter are used to set the database connection information.
-    public static String DataSource;// = "jdbc:mysql://localhost/questionbox";
-    public static String Username ;//= "root";
-    public static String Password ;//= "kanasepc";
+    public static String DataSource = "jdbc:mysql://localhost/questionbox";
+    public static String Username = "root";
+    public static String Password = "kanasepc";
 
+    //        static Logger logger = Logger.getLogger("ftl.DataAccess");
 
-    /**
-     * This function sets up the connection to the database. it takes the parameters set above
-     * to connect to the database.
-     * @return
-     * @throws Exception
-     */
-    public   static Connection getConnection() throws Exception {
+  //  public static String ConfigFileName = "C:\\Program Files\\Apache Software Foundation\\Tomcat 5.5\\webapps\\FTWeb\\WEB-INF\\web.xml";
+
+     public   static Connection getConnection() throws Exception {
         try {
 
+
+
+           // Config config = new Config();
+           // AppConfigParser ACP =  new AppConfigParser(ConfigFileName);
+          //  config.DataSource =
 
              Class.forName("com.mysql.jdbc.Driver").newInstance();
 
@@ -59,26 +56,30 @@ public class DataAccess {
         }
     }
 
-    /**
-     * This function is used to execute queries agained the above connection that return a resultset.
-     * It is for queries that don't have parameters.
-     * @param Query
-     * @return ResultSet
-     * @throws Exception
-     */
     public static ResultSet ExecuteQuery2(String Query) throws Exception
     {
-        return ExecuteQuery(Query,null);
+
+                     Connection dbconnection = null;
+                     PreparedStatement prepstm = null;
+
+          try{
+                     if(DataAccess.getConnection() == null)
+                     {
+                      throw new Exception("Database Connection was not successfully.");
+                     }
+
+                    dbconnection = DataAccess.getConnection() ;
+                    prepstm =   dbconnection.prepareStatement(Query);
+                    return prepstm.executeQuery();
+
+             }
+               catch(Exception e)
+             {
+                 throw new Exception("<br/>" + prepstm.toString() + " <br/> "+ e.getMessage() +"<br/>"+ e.getStackTrace());
+             }
     }
 
-    /**
-     * This function is used to execute queries agained the above connection that return a resultset.
-     * It takes an array of objects as parameters.
-     * @param Query
-     * @param parameter
-     * @return
-     * @throws Exception
-     */
+
     public static ResultSet ExecuteQuery(String Query, Object[] parameter) throws Exception
     {
 
@@ -105,25 +106,14 @@ public class DataAccess {
              }
     }
 
-    /**
-     * This function parses parameters from an array of objects and assigns the parameter list in the prepared Statement.
-     *
-     * @param prepstm
-     * @param parameter
-     * @return
-     * @throws Exception
-     */
     private static  PreparedStatement ParseParameter(PreparedStatement prepstm, Object[] parameter) throws Exception
     {
-            //For each of the parameters determine the type and then convert the value of that
-            // parameter to the corresponding type as you assign it to the prepared statement value
-            // in that position.
              for(int index = 0;index < parameter.length ; index++)
             {
                  if (parameter[index] == null)
                      parameter[index] = "";
 
-                  if(parameter[index] instanceof String || parameter[index] instanceof UUID )
+                 if(parameter[index] instanceof String || parameter[index] instanceof UUID )
                    {
                        prepstm.setString(index+1,parameter[index].toString());
                    }
@@ -155,51 +145,48 @@ public class DataAccess {
                        prepstm.setBoolean(index+1,Boolean.parseBoolean(parameter[index].toString()));
                    }
 
+                    /*
+                        prepstm.setString(1, town);  */
            }
              return prepstm;
     }
 
-    /**
-     * This function is used to execute inserts and updates that don't need to return results.
-     * @param Query
-     * @param parameter
-     * @return
-     * @throws Exception
-     */
     public static boolean ExecuteNonQuery(String Query , Object[] parameter) throws Exception
     {
                     String param = "";
                     Connection dbconnection = null;
                     PreparedStatement prepstm = null;
-               try
-               {
-                       if(DataAccess.getConnection() == null)
-                       {
+                try {
+
+
+                         if(DataAccess.getConnection() == null)
+                         {
                           throw new Exception("Database Connection was not successfully.");
-                       }
+                         }
 
-                    dbconnection = DataAccess.getConnection() ;
-                    prepstm =   dbconnection.prepareStatement(Query);
+                        dbconnection = DataAccess.getConnection() ;
+                        prepstm =   dbconnection.prepareStatement(Query);
 
-                    //This checks that number of "?" in the prepared statement matches the number of parameters.
-                    //If not an error is thrown.
-                    String[] paramList = Query.split("\\?");
-                    if(paramList == null || parameter == null )
-                        throw new Exception("Either No ? characters or parameter and null");
+                         String[] paramList = Query.split("\\?");
 
-                     if(parameter.length != paramList.length-1)
-                        throw new Exception("Parameters in the String don't match Parameter in the array object");
 
-                    prepstm = ParseParameter(prepstm,parameter);
+                        if(paramList == null || parameter == null )
+                            throw new Exception("Either No ? characters or parameter and null");
 
-                    prepstm.executeUpdate();
+                         if(parameter.length != paramList.length-1)
+                            throw new Exception("Parameters in the String don't match Parameter in the array object");
 
-                    return true;
+                        prepstm = ParseParameter(prepstm,parameter);
+
+
+                        prepstm.executeUpdate();
+
+                        return true;
                  }
                 catch(Exception e)
                 {
                     //  logger.error("Error in DataAcess.Insert: "+e.getMessage());
-                      throw new Exception(prepstm.toString() + "<br/>\n" + Query + " <br/> \n"+ e.getMessage() +"<br/>\n"+ e.getStackTrace());
+                      throw new Exception(prepstm.toString() + "<br/>" + Query + " <br/> "+ e.getMessage() +"<br/>"+ e.getStackTrace());
                     //  return false;
                 }
 

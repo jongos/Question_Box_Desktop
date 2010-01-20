@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 
 /**
  * Ticket
- * @author Ivan Kavuma
+ * @author ivank
  */
 public class Ticket {
 
@@ -126,7 +126,7 @@ public class Ticket {
 
     }
         /**
-    * This function saves updates of the ticket information to the database.
+    * This function Saves updates the ticket information to the database.
     * @return true if row is added successfully, else false.
     * @throws Exception
     */
@@ -239,8 +239,7 @@ public class Ticket {
 
 
     /**
-     * This function returns a list of pending tickets.  These are tickets where the status is
-     * anything else other than "completed".
+     *
      * @param Statusid
      * @param operatorid
      * @return
@@ -253,7 +252,7 @@ public class Ticket {
         String query = " SELECT TicketID ,Starttime , Endtime , OperatorID," +
                 " CallerID,QueryID,StatusID,AnswerID,ExpertID " +
                 " FROM qbticket " +
-                " WHERE  StatusID <> 7 AND OperatorID = ? " ; //7 refers to "Completed"
+                " WHERE  StatusID <> 7 AND OperatorID = ? " ;  //need to fix the hard coded statusid
 
         Object[] parameter = {  operatorid };
 

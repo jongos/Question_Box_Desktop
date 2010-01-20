@@ -14,7 +14,7 @@ import java.util.*;
 import java.sql.ResultSet;
 /**
  *
- * @author Ivan Kavuma
+ * @author ivank
  */
 public class Status {
 
@@ -39,7 +39,7 @@ public class Status {
     }
 
     /**
-     * Allows admin to add status for the tickets.
+     * Allows admin to define status for the tickets.
      * @return true if inserted successfully otherwise false.
      * @throws Exception
      */
@@ -67,13 +67,6 @@ public class Status {
        return DataAccess.ExecuteNonQuery(query,parameter );
     }
 
-     /**
-      * This function returns a status object given the description of the object.
-      * It is used in combo-boxes and dropdowns.  
-      * @param Descr
-      * @return Status object.
-      * @throws Exception
-      */
     public static Status getStatusbyDesc(String Descr) throws Exception
     {
            String query = " SELECT StatusID,Descr  " +
@@ -95,12 +88,7 @@ public class Status {
 
 
 
-    /**
-     * This function returns the status object from the database given the status id.
-     * @param Statusid
-     * @return Status object
-     * @throws Exception
-     */
+
     public static Status getStatus(long Statusid) throws Exception
     {
            String query = " SELECT StatusID,Descr  " +
@@ -121,7 +109,6 @@ public class Status {
     }
      /**
       * This function returns a list of all the status in the system.
-      * to be used in the dropdowns.
       * @return ArrayList<Status>
       * @throws Exception
       */

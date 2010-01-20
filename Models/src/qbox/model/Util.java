@@ -1,14 +1,7 @@
 /*
- * Appfrica Labs Uganda Ltd Copyrigth @since 2009
- * @version 2
- *
- * This class contains all the generally used functions throughout the system.
- * All of the function in this class are static and there is no need for an object of this
- * class to be created.
- *
- *
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
-
 
 package qbox.model;
 
@@ -21,16 +14,10 @@ import java.lang.*;
 
 /**
  *
- * @author Ivan Kavuma
+ * @author ivank
  */
 public class Util {
 
-    
-    /**
-     * This function is used to capitalize the first later of a string passed to it.
-     * @param String
-     * @return String
-     */
     public static String Capitalize(String val)
     {
         String returnVal = "";
@@ -44,7 +31,6 @@ public class Util {
 
     /**
      * This function details the next index from a given table name.
-     * It is used all over the library in the "Add" functions.
      * @param tablename
      * @return long
      * @throws Exception
@@ -70,7 +56,6 @@ public class Util {
 
 /**
  * Gets the current Timestamp of default format EEE MMM dd H:mm:ss z yyyy
- * This function is used every where in the application for seting DateCreated and DateUpdated
  * @return java.sql.Timestamp
  */
     public static java.sql.Timestamp Now()

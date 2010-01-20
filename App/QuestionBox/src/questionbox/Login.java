@@ -76,6 +76,7 @@ public class Login extends javax.swing.JFrame{
      */
     public Login() {
         initComponents();
+        this.setTitle("Login Form");
         lblUsername.setText("Username");
         lblPassword.setText("Password");
         btnCancel.setText("Cancel");

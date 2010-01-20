@@ -7,7 +7,7 @@
  * as it progress between different statuses or stages. So that other operators know what is going
  * on with a particular ticket from day to day.
  *
- * @author Ivan Kavuma
+ * @author ivank
  */
 package qbox.model;
 
@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author Ivan Kavuma
+ * @author Administrator
  */
 public class TicketNote {
 
@@ -129,7 +129,6 @@ public class TicketNote {
 
  /**
  * Returns all the ticket notes associated with ticket.
- * For use in the list on the ticket form.
  * @param TicketID
  * @return
  * @throws Exception

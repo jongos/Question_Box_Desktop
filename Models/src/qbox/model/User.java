@@ -210,7 +210,7 @@ public class User {
 
  
    /**
-    * This function saves the user information to the database.
+    * This function Saves the user information to the database.
     * @return true if row is added successfully, else false.
     * @throws Exception
     */
@@ -282,7 +282,7 @@ public class User {
      }
 
       /**
-       * This function gets all the user information from the database based given a username.
+       * This function gets all the user information from the database based given a user id.
        * if no user is found an empty user object is returned.
        * @param username
        * @return a user object with all the attributes filled in.
@@ -414,12 +414,6 @@ public class User {
            return Users;
      }
 
-
-      /**
-       * This function does a logical delete of the user.
-       * @return
-       * @throws Exception
-       */
      public boolean DeleteUser() throws Exception
      {
 

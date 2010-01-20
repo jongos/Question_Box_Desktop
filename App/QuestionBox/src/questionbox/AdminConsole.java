@@ -12,6 +12,7 @@
 
 package questionbox;
 
+import org.jdesktop.application.Action;
 import qbox.model.*;
 
 /**
@@ -23,6 +24,7 @@ public class AdminConsole extends javax.swing.JFrame {
     /** Creates new form AdminConsole */
     public AdminConsole() {
         initComponents();
+        this.setTitle("Administrator Console");
         buttonAddOperator.setText("Add Operator");
         btnAddCategory.setText("Add Category");
         btnAddAnswer.setText("Add Answer");
@@ -43,6 +45,7 @@ public class AdminConsole extends javax.swing.JFrame {
         buttonAddOperator = new javax.swing.JButton();
         btnAddCategory = new javax.swing.JButton();
         btnAddAnswer = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jSplitPane1 = new javax.swing.JSplitPane();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -72,7 +75,7 @@ public class AdminConsole extends javax.swing.JFrame {
                 buttonAddOperatorActionPerformed(evt);
             }
         });
-        buttonAddOperator.setBounds(20, 20, 110, 30);
+        buttonAddOperator.setBounds(20, 20, 160, 30);
         desktopPane.add(buttonAddOperator, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         btnAddCategory.setText(resourceMap.getString("btnAddCategory.text")); // NOI18N
@@ -82,7 +85,7 @@ public class AdminConsole extends javax.swing.JFrame {
                 btnAddCategoryActionPerformed(evt);
             }
         });
-        btnAddCategory.setBounds(20, 60, 110, 30);
+        btnAddCategory.setBounds(20, 60, 160, 30);
         desktopPane.add(btnAddCategory, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         btnAddAnswer.setText(resourceMap.getString("btnAddAnswer.text")); // NOI18N
@@ -92,8 +95,15 @@ public class AdminConsole extends javax.swing.JFrame {
                 btnAddAnswerActionPerformed(evt);
             }
         });
-        btnAddAnswer.setBounds(20, 100, 110, 30);
+        btnAddAnswer.setBounds(20, 100, 160, 30);
         desktopPane.add(btnAddAnswer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(questionbox.QuestionBoxApp.class).getContext().getActionMap(AdminConsole.class, this);
+        jButton1.setAction(actionMap.get("openRecsites")); // NOI18N
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.setBounds(20, 140, 160, 30);
+        desktopPane.add(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jSplitPane1.setName("jSplitPane1"); // NOI18N
 
@@ -225,6 +235,13 @@ public class AdminConsole extends javax.swing.JFrame {
         });
     }
 
+    @Action
+    public void openRecsites() {
+
+      StaticMain.recsite = new Recommendedsitefrm();
+      StaticMain.recsite.show();
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JButton btnAddAnswer;
@@ -239,6 +256,7 @@ public class AdminConsole extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem pasteMenuItem;

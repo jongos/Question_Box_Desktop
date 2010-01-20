@@ -23,4 +23,5 @@ public class StaticMain {
     public static OperatorConsole  operatorconsole = null;
     public static Search search = null;
     public static Ticket ticket = null;
+    public static Recommendedsitefrm recsite = null;
 }

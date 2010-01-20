@@ -26,6 +26,7 @@ public class CatFrm extends javax.swing.JFrame {
      */
     public CatFrm() {
         initComponents();
+        this.setTitle("Add Category Form");
         lblTitle.setText("Title");
         lblDescr.setText("Description");
 
@@ -54,8 +55,6 @@ public class CatFrm extends javax.swing.JFrame {
         buSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(questionbox.QuestionBoxApp.class).getContext().getResourceMap(CatFrm.class);
-        setTitle(resourceMap.getString("Form.title")); // NOI18N
         setName("Form"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
@@ -72,10 +71,8 @@ public class CatFrm extends javax.swing.JFrame {
             }
         });
 
-        lblDescr.setText(resourceMap.getString("lblDescr.text")); // NOI18N
         lblDescr.setName("lblDescr"); // NOI18N
 
-        lblTitle.setText(resourceMap.getString("lblTitle.text")); // NOI18N
         lblTitle.setName("lblTitle"); // NOI18N
 
         butClear.setName("butClear"); // NOI18N
@@ -106,7 +103,7 @@ public class CatFrm extends javax.swing.JFrame {
                         .addGap(93, 93, 93))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblDescr)
-                        .addContainerGap(285, Short.MAX_VALUE))
+                        .addContainerGap(323, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -127,7 +124,7 @@ public class CatFrm extends javax.swing.JFrame {
                 .addComponent(lblDescr, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(butClear)
                     .addComponent(buSave))

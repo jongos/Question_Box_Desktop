@@ -4,9 +4,6 @@ package qbox.model;
  * @version 2
  *
  * This class Manages users who include operators, adminstrator, and experts and callers
- * We don't have an interface for any user to add new ones to the database.
- * But One can add more to the database and then follow the implementation all the way to
- * the UI.
  * 
  *
  */
@@ -61,7 +58,7 @@ public class UserType {
     }
 
     /**
-     * This function returns a list of userTypes to be used in dropdowns.
+     * ArrayList<UserType> getUserTypes() throws Exception
      * @return ArrayList<UserType>
      * @throws Exception
      */

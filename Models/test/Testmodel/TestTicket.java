@@ -69,7 +69,7 @@ public class TestTicket extends TestCase  {
     public static long AddAnswer() throws Exception
     {
         Answer ans =  new Answer();
-        ans.setDetails("Some time in August ");
+        ans.SetDetails("Some time in August ");
         ans.AddAnswer();
         System.out.println("Answer was added successfully!");
         return ans.getAnswerid();

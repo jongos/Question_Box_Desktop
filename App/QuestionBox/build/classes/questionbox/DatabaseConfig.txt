@@ -1,3 +1,0 @@
-DataSource=jdbc:mysql://localhost/questionbox
-Username=root
-Password=kanasepc
