@@ -1,0 +1,42 @@
+A. Creating An Install Package
+
+	1. Build with netbeans or eclipse IDE. Run the jar file.  You may need a proper location for the DatabaseConfig.txt
+	2. Create a database with any name.
+	3. Run the database script against the above database.
+	4. Run the jar from this location with the command 'java -jar QuestionBox.jar'
+
+Note: make sure the lib folder is in the save directory as the jar file you are running.
+
+B. Using Jars
+
+This is also a sufficient step; you can use just the lib folder, 
+the QuestionBox.jar, and the DatabaseConfig.txt file to create a project structure as shown below;
+
+	1. Create a folder
+		%mkdir QuestionBox
+	
+	2. Under the QuestionBox folder copy the following items in that folder
+	
+		- QuestionBox.jar
+		- lib folder
+		- DatabaseConfig.txt
+	
+NOTE: Do not forget to run the DatabaseScript.sql against your own MySQL installation; 
+For phpMyAdmin users, it is easy; create database (call it questionbox), and import 
+the SQL script, click go.
+
+Please refer to your MySQL manual if you want to use the shell/commandline which is 
+also easy.
+
+	Use MySQL 5.0+
+
+	Not tested on MySQL 6.0
+
+	Use Java 1.5+ (tested on Java 5 and 6)
+
+Finally, the project structure:
+
+	++QuestionBox
+	--++QuestionBox.jar
+	--++Lib/
+	--++DatabaseConfig.txt

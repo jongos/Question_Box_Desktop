@@ -1,19 +1,15 @@
-=======================
-OPEN QUESTION 0.2.0
-=======================
+=====================
+OPEN QUESTION 0.2.1
+=====================
 
-A project based on QuestionBox; it handles queries of callers on various
-topics; for more information http://www.questionbox.org/
-
-==============================
-BUG REPORTS
-==============================
+A project based on QuestionBox; it handles queries of callers on various topics; for more 
+information http://www.questionbox.org/
 
 Currently tracking all open issues at http://github.com/openquestion/Question_Box_Desktop/issues
 
-=====================
+=============
 DEVELOPMENT
-=====================
+=============
 
 You can pullout the source and commit changes or you can build on top of the existing source code 
 and use Java's clean object oriented features to overload or override existing classes; we have
@@ -28,48 +24,7 @@ The wish-list has a developers discussion group that can be found at http://grou
 SETUP AND INSTALLATION
 ========================
 
-A. Creating An Install Package
-
-	1. Build with netbeans or eclipse IDE. Run the jar file.  You may need a proper location for the DatabaseConfig.txt
-	2. Create a database with any name.
-	3. Run the database script against the above database.
-	4. Run the jar from this location with the command 'java -jar QuestionBox.jar'
-
-Note: make sure the lib folder is in the save directory as the jar file you are running.
-
-B. Using Jars
-
-This is also a sufficient step; you can use just the lib folder, 
-the QuestionBox.jar, and the DatabaseConfig.txt file to create a project structure as shown below;
-
-	1. Create a folder
-		%mkdir QuestionBox
-	
-	2. Under the QuestionBox folder copy the following items in that folder
-	
-		- QuestionBox.jar
-		- lib folder
-		- DatabaseConfig.txt
-	
-NOTE: Do not forget to run the DatabaseScript.sql against your own MySQL installation; 
-For phpMyAdmin users, it is easy; create database (call it questionbox), and import 
-the SQL script, click go.
-
-Please refer to your MySQL manual if you want to use the shell/commandline which is 
-also easy.
-
-	Use MySQL 5.0+
-
-	Not tested on MySQL 6.0
-
-	Use Java 1.5+ (tested on Java 5 and 6)
-
-Finally, the project structure:
-
-	++QuestionBox
-	--++QuestionBox.jar
-	--++Lib/
-	--++DatabaseConfig.txt
+See INSTALL
 
 ======================
 DISTRIBUTION LICENSE
@@ -77,9 +32,9 @@ DISTRIBUTION LICENSE
 
 Open Question is a free and open source project and released under the GNU LESSER GENERAL PUBLIC LICENSE (http://www.gnu.org/licenses/lgpl-3.0.txt)
 
-=============================
+========================
 CORE DEVELOPMENT TEAM
-=============================
+=======================
 
 twitter - @appfrica or @questionbox
 
